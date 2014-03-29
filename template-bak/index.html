@@ -1,0 +1,71 @@
+{{template "header"}}
+
+    <h2>Todo</h2>
+    <div id="main" class="pure-g-r" ng-controller="TodoCtrl">
+       <div class="pure-u-1">
+         <!--可以录入内容的部分-->
+          <form class="pure-form" ng-submit="addTodo()">
+            <fieldset>
+                <input id="starttime" name="starttime" type="text" placeholder="">
+                <input type="text" placeholder="内容">
+                <button type="submit" class="pure-button pure-button-primary">增加</button>
+            </fieldset>
+        </form>
+
+       </div>
+      <div id="today-todo" class="pure-u-1">
+        <!--今天有哪些要做的事-->
+        <table class="pure-table pure-table-horizontal">
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Make</th>
+                  <th>Model</th>
+                  <th>Year</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                  <td>1</td>
+                  <td>Honda</td>
+                  <td>Accord</td>
+                  <td>2009</td>
+              </tr>
+          </tbody>
+          </table>
+      </div>
+      
+      <div id="tomo-todo" class="pure-u-1">
+        <!--明天有哪些要做的事-->
+      </div>
+      
+      <div id="yestoday-todo" class="pure-u-1">
+        <!--昨天做了哪些要做的事-->
+      </div>
+
+
+    </div>
+
+ 
+<div ng-controller="TodoCtrl">
+      <span>{{remaining()}} of {{todos.length}} remaining</span>
+      [ <a href="" ng-click="archive()">archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+
+ 
+
+  {{template "jslib"}}
+  <script type="text/javascript" src="/public/js/todo.js"></script>
+  {{template "footer"}}

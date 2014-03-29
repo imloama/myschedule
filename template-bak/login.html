@@ -1,0 +1,22 @@
+{{template "header"}}
+
+<div id="login-div" class="pure-g-r">
+    <form class="pure-form pure-form-aligned" action="/login" method="POST">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="name">用户名</label>
+                <input id="name" type="text" placeholder="请输入用户名">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="password">密码</label>
+                <input id="password" type="password" placeholder="请输入密码">
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">登陆</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+  {{template "jslib"}}
+  {{template "footer"}}

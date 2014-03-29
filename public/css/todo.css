@@ -1,0 +1,32 @@
+.table{
+	border:1px solid #4A8CF6;
+	border-radius:5px;
+}
+.table>tbody>tr>td{
+	line-height:25px;	
+}
+.todo-show-header{
+	line-height:40px;
+	font-size:20px;
+	background:#4A8CF6;
+	/*border-radius:5px;*/
+	color:#FFFFFF;
+}
+/**显示*/
+.display-btn-0{
+	display:inline;
+}
+.display-btn-1{
+	display:none;
+}
+/**删除线*/
+.display-tr-1{
+	text-decoration:line-through;
+}
+.display-label-0{
+	display:none;
+}
+.display-label-1{
+	display:inline;
+}
+
