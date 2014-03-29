@@ -1,4 +1,4 @@
-var rooturl = 'http://localhost:7890/';
+var rooturl = '/';
 var todo = angular.module('todo',['ngCookies']);
 
 todo.config(function($interpolateProvider){
