@@ -29,7 +29,7 @@ func (todo *Todo) Add() error {
 		fmt.Println("保存失败！")
 		return err
 	} else {
-		sql = fmt.Sprintf("select Id,Title,Level,Starttime from todos where userid=%d  order by id limit 1", todo.UserId)
+		sql = fmt.Sprintf("select Id,Title,Level,Starttime from todos where userid=%d  order by id desc limit 1", todo.UserId)
 		fmt.Println("[SQL]" + sql)
 		db = util.NewDb("./myschedule.db")
 		rows, _ := db.Query(sql)
@@ -38,7 +38,6 @@ func (todo *Todo) Add() error {
 		}
 		return nil
 	}
-
 }
 
 //根据用户ID，查找所有该用户的今日工作
